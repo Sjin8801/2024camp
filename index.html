@@ -21,9 +21,17 @@
         }
         .message {
             margin-top: 20px;
-            font-size: 1.2em;
+            padding: 15px;
+            font-size: 1.5em;
             font-weight: bold;
-            color: #007bff;
+            color: #ffffff;
+            background-color: #007bff;
+            border-radius: 8px;
+            border: 2px solid #0056b3;
+            text-align: center;
+        }
+        .hidden {
+            display: none;
         }
     </style>
 </head>
@@ -37,7 +45,7 @@
             <button type="submit" class="btn btn-primary btn-block">제출</button>
             <button type="button" id="resetButton" class="btn btn-secondary btn-block mt-2">초기화</button>
         </form>
-        <div id="message" class="message text-center"></div>
+        <div id="message" class="message hidden"></div>
     </div>
 
     <script>
@@ -159,12 +167,16 @@
                 "이창호": "역할분담의 책임, 구성원 성장, 안정적인 실적유지"
             };
             var message = nameToMessage[name] || "22년도의 고민을 찾을 수 없어요.";
-            document.getElementById('message').textContent = message;
+            var messageElement = document.getElementById('message');
+            messageElement.textContent = message;
+            messageElement.classList.remove('hidden');
         });
 
         document.getElementById('resetButton').addEventListener('click', function() {
             document.getElementById('nameInput').value = '';
-            document.getElementById('message').textContent = '';
+            var messageElement = document.getElementById('message');
+            messageElement.textContent = '';
+            messageElement.classList.add('hidden');
         });
     </script>
 </body>
