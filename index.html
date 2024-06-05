@@ -29,12 +29,13 @@
 </head>
 <body>
     <div class="container">
-        <h2 class="text-center">Enter a Name</h2>
+        <h2 class="text-center">22년도의 나는 어떤 고민이 있었을까요?</h2>
         <form id="nameForm" class="mt-4">
             <div class="form-group">
-                <input type="text" id="nameInput" class="form-control" placeholder="Name" required>
+                <input type="text" id="nameInput" class="form-control" placeholder="이름을 입력해주세요." required>
             </div>
-            <button type="submit" class="btn btn-primary btn-block">Submit</button>
+            <button type="submit" class="btn btn-primary btn-block">제출</button>
+            <button type="button" id="resetButton" class="btn btn-secondary btn-block mt-2">초기화</button>
         </form>
         <div id="message" class="message text-center"></div>
     </div>
@@ -51,7 +52,7 @@
                 "김도현": "오픈매장 준비로인한 어수선한분위기, 피로감에 시달리는 구성원들 케어하기, 회사를 8년째다니고 있으나 곧접어들 40대에대한 두려움",
                 "신경덕": "구성원 케어 사적인부분, 매장 지속 성장을 위한 우리의 활동, 구성원 개인별 월 평가 결과",
                 "윤정선": "마음의 여유가 없음, 구성원 성장, 구성원 육성",
-                "김용순": "상권변화를 적시에  대처하는 부분이 어려움, 단골고객 재구매위한 구성원 공감대 형성, 일부구성원의 떨어진 개인성장 맟 욕심 부재 캐어",
+                "김용순": "상권변화를 적시에 대처하는 부분이 어려움, 단골고객 재구매위한 구성원 공감대 형성, 일부구성원의 떨어진 개인성장 맟 욕심 부재 캐어",
                 "이철": "스스로 일을 만들어냄으로 인한 업무의 과부하., 열정에 비해 나오지 않는 성적에 대한 허탈감., 구성원들의 비전 제시.",
                 "손영재": "인재 육성, 매장 성장, 인력난",
                 "노얼": "근무인력, 위성매장관리, 휴무",
@@ -98,7 +99,7 @@
                 "박승용": "상권내 꾸준한 성장, 크루 개개인의 성장, 단골 활성화",
                 "김지일": "안정적 실적, 시장 경쟁자들이 계속 생기면서 치열해진 시장, 구성원들의 회사 생활에 대한 전체적인 업무만족",
                 "윤승민": "실적 하락, 구성원 관리, 재고 확보",
-                "이우영": "부진 매장 실적 성장, 구성원 마인드 변화, 구성원  동기 부여",
+                "이우영": "부진 매장 실적 성장, 구성원 마인드 변화, 구성원 동기 부여",
                 "김원석": "구성원 마인드, 매장 성장, 인력 대한 케어",
                 "서영균": "점장부재&인력부족, 구성원별 역량/열정 차이 극복방안",
                 "김지용": "위성매장 밀착 관리의 어려움., 구성원의 역량 편차 극복., 구성원의 Condition 관리.",
@@ -160,7 +161,11 @@
             var message = nameToMessage[name] || "Sorry, no message found for that name.";
             document.getElementById('message').textContent = message;
         });
+
+        document.getElementById('resetButton').addEventListener('click', function() {
+            document.getElementById('nameInput').value = '';
+            document.getElementById('message').textContent = '';
+        });
     </script>
 </body>
 </html>
-
