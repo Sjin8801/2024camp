@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Name Message App</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8f9fa;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .message {
+            margin-top: 20px;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="text-center">22년의 나에게 온 고민 편지를 보려면 이름을 입력해주세요.</h2>
+        <form id="nameForm" class="mt-4">
+            <div class="form-group">
+                <input type="text" id="nameInput" class="form-control" placeholder="Name" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Submit</button>
+        </form>
+        <div id="message" class="message text-center"></div>
+    </div>
+
+    <script>
+        document.getElementById('nameForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var name = document.getElementById('nameInput').value;
+            var nameToMessage = {
+                "오승진": "이름을 입력하니 이렇게 출력이 돼요.",
+                "김지혜": "아주 신기하죠?",
+                "Charlie": "Hey Charlie! Long time no see."
+                // 여기에 더 많은 이름과 메시지를 추가할 수 있습니다.
+            };
+            var message = nameToMessage[name] || "22년도의 나의 메시지가 없어요.";
+            document.getElementById('message').textContent = message;
+        });
+    </script>
+</body>
+</html>
