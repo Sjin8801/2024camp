@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>22년도의 나에게 온 메시지</title>
+    <title>1년 전 내가 작성한 '되고 싶은 센터장'의 모습</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
@@ -37,7 +37,7 @@
 </head>
 <body>
     <div class="container">
-        <h2 class="text-center">22년도의 나는 어떤 고민이 있었을까요?</h2>
+        <h2 class="text-center">1년 전 내가 작성한 '되고 싶은 센터장'의 모습</h2>
         <form id="nameForm" class="mt-4">
             <div class="form-group">
                 <input type="text" id="nameInput" class="form-control" placeholder="이름을 입력해주세요." required>
@@ -166,7 +166,7 @@
                 "이한기": "구성원의 마음 알아주기, 싫은일 즐겁게 만들기(의욕갖게하기), 진심으로 소통하기",
                 "이창호": "역할분담의 책임, 구성원 성장, 안정적인 실적유지"
             };
-            var message = nameToMessage[name] || "22년도의 고민을 찾을 수 없어요.";
+            var message = nameToMessage[name] || "작성한 내용이 없습니다.";
             var messageElement = document.getElementById('message');
             messageElement.textContent = message;
             messageElement.classList.remove('hidden');
